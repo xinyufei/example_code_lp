@@ -18,18 +18,18 @@ num_warehouse = 6
 # This is a two-dimensional list with size num_plants * num_warehouse
 # For simplicity, we define all the costs as integer values. For your instance, 
 # you can define any costs you like. 
-cost = [[3., 1., 1., 2., 3., 1.],
-       [5., 2., 5., 2., 1., 5.],
-       [2., 2., 5., 3., 4., 2.],
-       [5., 4., 5., 5., 4., 5.],
-       [5., 2., 2., 2., 5., 3.],
-       [4., 5., 5., 5., 2., 1.],
-       [1., 1., 1., 5., 3., 5.],
-       [2., 3., 4., 1., 4., 4.]]
+cost = [[3, 1, 1, 2, 3, 1],
+       [5, 2, 5, 2, 1, 5],
+       [2, 2, 5, 3, 4, 2],
+       [5, 4, 5, 5, 4, 5],
+       [5, 2, 2, 2, 5, 3],
+       [4, 5, 5, 5, 2, 1],
+       [1, 1, 1, 5, 3, 5],
+       [2, 3, 4, 1, 4, 4]]
 # Production capacity (a in the slides). It is a vector with size num_plants
-capacity = [ 3.,  8.,  5.,  9.,  9.,  6., 13., 15.]
+capacity = [ 3,  8,  5,  9,  9,  6, 13, 15]
 # Demand (b in the slides). It is a vector with size num_warehouse
-demand = [ 8., 13.,  8.,  6., 11.,  9.]
+demand = [ 8, 13,  8,  6, 11,  9]
 
 # define a new model with name diet
 m = gp.Model("transportation")
@@ -56,5 +56,6 @@ print("The optimal value is", m.objval)
 # Print the optimal solutions
 for i in range(num_plants):
     for j in range(num_warehouse):
-        print("unit on arc", (i, j), "is", arcs[i, j].x)
+        if arcs[i, j].x > 0:
+            print("non-zero unit on arc", (i, j), "is", arcs[i, j].x)
 
