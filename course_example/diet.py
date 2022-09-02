@@ -15,7 +15,7 @@ num_food = 5
 # name of foods
 food_name = ["Chocolate", "Special K", "Steak", "Orange Juice", "Pizza"]
 # price of foods
-price = [0.75, 0.05, 1.5, 0.45, 1.25]
+price = [0.75, 0.55, 1.5, 0.45, 1.25]
 # fat of foods
 fat = [5, 1, 1, 0, 10]
 # Maximum bound on fat content

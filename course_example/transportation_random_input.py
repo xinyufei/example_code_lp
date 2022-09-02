@@ -25,12 +25,12 @@ print("The cost matrix is \n", cost)
 # Production capacity (a in the slides). It is a vector with size num_plants
 # For simplicity, we assume that the product capacity of each plant is generated from 
 # {5, 6, ..., 15} with equal probability. 
-capacity = np.random.randint(5, 15, size=num_plants)
+capacity = np.random.randint(5, 16, size=num_plants)
 print("The capacity of all the plants is", capacity)
 # Demand (b in the slides). It is a vector with size num_warehouse
 # For simplicity, we assume that the demand of each warehouse is generated from 
 # {5, 6, ..., 15} with equal probability. 
-demand = np.random.randint(5, 15, size=num_warehouse)
+demand = np.random.randint(5, 16, size=num_warehouse)
 print("The demand of all the warehouses is", demand)
 
 # define a new model with name diet
